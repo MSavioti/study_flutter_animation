@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:study_flutter_animation/animated_widget/animated_logo.dart';
+import 'package:study_flutter_animation/simultaneous_animations/animated_logo.dart';
 
 class SimultaneousAnimationsDemoPage extends StatefulWidget {
   const SimultaneousAnimationsDemoPage({Key? key}) : super(key: key);
@@ -19,8 +19,8 @@ class _SimultaneousAnimationsDemoPageState
   void initState() {
     super.initState();
     controller =
-        AnimationController(duration: const Duration(seconds: 1), vsync: this);
-    animation = Tween<double>(begin: 200, end: 300).animate(controller)
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn)
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
           controller.reverse();

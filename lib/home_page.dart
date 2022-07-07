@@ -23,6 +23,12 @@ class HomePage extends StatelessWidget {
                   Navigator.of(context).pushNamed('/animated_builder');
                 },
               ),
+              ElevatedButton(
+                child: const Text('Simultaneous Animations Example'),
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/simultaneous_animations');
+                },
+              ),
             ],
           ),
         ),
